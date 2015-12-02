@@ -1,7 +1,44 @@
-# CSC309-CI-Aldrich-
-echo # CSC309-CI-Aldrich- >> README.md
-git init
-git add README.md
-git commit -m "first commit"
-git remote add origin https://github.com/ndaldric/CSC309-CI-Aldrich-.git
-git push -u origin master
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace Dorm_and_Mela_Plan_Calculator
+{
+    public partial class TotalChargesForm : Form
+    {
+        public TotalChargesForm()
+        {
+            InitializeComponent();
+
+            
+        }
+        private string tot;
+        public string PassValue                                         //establishes a get set for the PassValue
+        {                                                               //used in form 1
+            get { return tot; }
+            set { tot = value; }
+        }
+        
+        private void button1_Click(object sender, EventArgs e)          //closes form 2
+        {
+            this.Close();
+        }
+
+        private void txtTotal_TextChanged(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void TotalChargesForm_Load(object sender, EventArgs e)
+        {
+            txtPasstotal.Text = "your total Charges are"+": "+"$ " + tot+".00";        //displays the total charges
+        }                                                                               //in a textbox
+    }
+}
+
